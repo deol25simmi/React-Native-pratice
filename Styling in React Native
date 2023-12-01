@@ -40,3 +40,23 @@ const styles = StyleSheet.create(
   }
 )
 export default App;
+
+
+
+/*
+styling in external file *
+import {StyleSheet} from 'react-native';
+
+export default Exstyles = StyleSheet.create({
+  textBox: {
+    backgroundColor: 'violet',
+    fontSize: 25,
+    color: '#000',
+
+    borderColor: 'blue',
+    borderWidth: 2,
+  },
+});
+
+**/
+
