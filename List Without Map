@@ -1,0 +1,77 @@
+import React, {useState} from 'react';
+import {Text, View, FlatList, StyleSheet,ScrollView} from 'react-native';
+
+const App = () => {
+  const Users = [
+    {
+      id: 1,
+      name: 'sam',
+    },
+    {
+      id: 2,
+      name: 'ram',
+    },
+    {
+      id: 3,
+      name: 'Moon',
+    },
+    {
+      id: 4,
+      name: 'Roop',
+    },
+    {
+      id: 5,
+      name: 'Deep',
+    },
+    {
+      id: 5,
+      name: 'Sundar',
+    },
+    {
+      id: 51,
+      name: 'Deep',
+    },
+    {
+      id: 5,
+      name: 'Aka',
+    },
+    {
+      id: 7,
+      name: 'prince',
+    },
+    {
+      id: 8,
+      name: 'Monue',
+    },
+    {
+      id: 9,
+      name: 'Deep',
+    },
+    {
+      id: 10,
+      name: 'Peter',
+    },
+  ];
+  return (
+    <View>
+      <Text style={{fontSize: 30}}>List using Map</Text>
+      <ScrollView  style={{marginBottom:60}}>
+        {Users.map(item => (
+          <Text style={styles.item}>{item.name}</Text>
+        ))}
+      </ScrollView>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  item: {
+    fontSize: 20,
+    padding: 10,
+    backgroundColor: 'blue',
+    borderColor: 'violet',
+    margin: 5,
+  },
+});
+
+export default App;
