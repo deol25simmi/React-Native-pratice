@@ -1,0 +1,68 @@
+
+import React, {useState} from 'react';
+import {Text, View, TextInput, Button, StyleSheet} from 'react-native';
+
+
+const App = () => {
+  const [name, setName] = useState('');
+  const [email, setMail] = useState('');
+  const [pass, setPass] = useState('');
+  const [display, setDisplay] = useState(false);
+  const ResetForm  = () =>
+  {
+    setDisplay(false);
+    setName("");
+    setMail("");
+    setPass("");
+  }
+  return (
+    <View>
+      <Text style={{fontSize: 25}}>Simple form in React Native</Text>
+      <TextInput
+        style={styles.TextInput}
+        placeholder="Enter user name"
+        onChangeText={text => setName(text)}
+        value={name}></TextInput>
+      <TextInput
+        style={styles.TextInput}
+        placeholder="Enter user email"
+        onChangeText={text => setMail(text)}
+        value={email}></TextInput>
+      <TextInput
+        style={styles.TextInput}
+        placeholder="Enter Password"
+        onChangeText={text => setPass(text)}
+        value={pass}
+        secureTextEntry={true}></TextInput>
+
+      <View style={{marginBottom: 10}}>
+        <Button title="Here are your details - Print them"  onPress={()=>{setDisplay(true)}}></Button>
+      </View>
+      <Button title="Clear All"  onPress={ResetForm}></Button>
+
+      <View>
+        {display ? (
+          <View>
+            <Text>User name: {name}</Text>
+            <Text>User email id: {email}</Text>
+            <Text>User password: {pass}</Text>
+          </View>
+        ) : null}
+      </View>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  TextInput: {
+    fontSize: 20,
+    backgroundColor: 'magenta',
+    borderWidth: 7,
+    borderRadius: 25,
+    borderColor: 'blue',
+    textAlign: 'center',
+    marginBottom: 10,
+  },
+});
+
+export default App;
