@@ -1,0 +1,53 @@
+import React, {useState} from 'react';
+import {Text, View, FlatList,StyleSheet} from 'react-native';
+
+const App = () => {
+  const Users = [
+    {
+      id: 1,
+      name: 'sam',
+    },
+    {
+      id: 2,
+      name: 'ram',
+    },
+    {
+      id: 3,
+      name: 'Moon',
+    },
+    {
+      id: 4,
+      name: 'Roop',
+    },
+    {
+      id: 5,
+      name: 'Deep',
+    },
+  ];
+  return (
+    <View>
+      <Text style={{fontSize: 30}}>List with Flat List Component</Text>
+      <FlatList 
+      data={Users}
+      renderItem={({item})=><Text  style={styles.item}>{item.name}</Text>}
+      keyExtractor={item=>item.id}
+      />
+    </View>
+  );
+};
+
+const styles = StyleSheet.create(
+  {
+     item:
+     {
+      fontSize:20,
+      padding:10,
+      backgroundColor:'blue',
+      borderColor:"violet",
+      margin:5
+
+     }
+  }
+)
+
+export default App;
