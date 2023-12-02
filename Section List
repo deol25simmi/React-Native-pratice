@@ -1,0 +1,52 @@
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ *
+ * @format
+ * @flow strict-local
+ */
+
+import React, {useState} from 'react';
+import {Text, View, FlatList, StyleSheet, SectionList} from 'react-native';
+
+const App = () => {
+  const Users = [
+    {
+      id: 1,
+      name: 'sam',
+      data: ['C', 'C++', 'Python'],
+    },
+    {
+      id: 2,
+      name: 'ram',
+      data: ['CSS', 'html', 'Javascript'],
+    },
+    {
+      id: 3,
+      name: 'Moon',
+      data: ['Ruby', 'Python', 'Golang'],
+    },
+    {
+      id: 4,
+      name: 'Roop',
+      data: ['Java', 'Kotlin', 'Android'],
+    },
+  ];
+  return (
+    <View>
+      <Text style={{fontSize: 40}}>Section List</Text>
+      <SectionList
+        sections={Users}
+        renderItem={({item}) => (
+          <Text style={{fontSize: 25, marginLeft: 10}}>{item}</Text>
+        )}
+        renderSectionHeader={({section: {name}}) => (
+          <Text style={{fontSize: 30, color: 'red'}}>{name}</Text>
+        )}></SectionList>
+    </View>
+  );
+};
+
+
+
+export default App;
